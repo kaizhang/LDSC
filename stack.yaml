@@ -1,0 +1,34 @@
+resolver: lts-18.3
+
+packages:
+- '.'
+
+flags:
+  cryptonite:
+    use_target_attributes: false
+
+extra-deps:
+
+- git:     https://github.com/kaizhang/bioinformatics-toolkit.git
+  commit:  463cb8d16230a0777072e8793338b89a7c420487
+  subdirs:
+      - bioinformatics-toolkit
+
+- bbi-0.1.1
+- clustering-0.4.1
+- HsHTSLib-1.9.2@sha256:a2a4f0717c59e0d3c311a9f4cab235649b00e9f3bb4168009187e54aeefe18a1,3015
+
+- git:     https://github.com/Taiji-pipeline/distributed-process.git
+  commit:  e143f6bce9d7f1e13b0d12f11763f6f24d2da4df
+- distributed-process-monad-control-0.5.1.3
+- network-transport-tcp-0.8.0
+- distributed-static-0.3.9
+
+- git:     https://github.com/kaizhang/SciFlow.git
+  commit:  ee510340b54f4e2c416cc6e121c767885abce374
+  subdirs:
+      - SciFlow
+      - SciFlow-app
+      - SciFlow-remote
+
+- jmacro-0.6.17@sha256:3a1e6ae8e1c3f8d9984036f27b2207f532655f93740e0c90b253dcace33c9679,2901
