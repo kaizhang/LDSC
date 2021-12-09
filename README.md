@@ -21,7 +21,7 @@ To install this pipeline, download pre-built binaries for macOS or Linux systems
 Example:
 
 ```
-curl -L https://github.com/Taiji-pipeline/Taiji/releases/latest/download/taiji-CentOS-x86_64 -o ldsc
+curl -L https://github.com/kaizhang/LDSC/releases/latest/download/ldsc-CentOS-x86_64 -o ldsc
 chmod +x ldsc
 ./ldsc --help
 ```
@@ -35,5 +35,9 @@ To run this pipeline, you need to prepare the following files:
 - plink files
 - A list of SNPs
 - LD scores
+- LD score weights
 
-ldsc run --config config.dhall
+As an example, we will run the pipeline for GRCh38 genome and European acestry:
+
+1. Download all files listed here: http://renlab.sdsc.edu/kai/LDSC_hg38/
+2. `cd example && ldsc run --config config.dhall`
