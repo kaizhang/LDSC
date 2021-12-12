@@ -62,9 +62,9 @@ build "wf" [t| SciFlow LDSCConfig |] $ do
 
     uNode "Regression_Prep" [| \(control, targets) -> do
         sumstats <- asks summary_statistics
-        let control' = f $ snd $ head $ snd control
-            targets' = map (\x -> (fst x, f $ snd $ head $ snd x)) targets
-            f = T.unpack . fst . T.breakOnEnd "." . T.pack
+        let control' = getPath $ snd $ head $ snd control
+            targets' = map (\x -> (fst x, getPath $ snd $ head $ snd x)) targets
+            getPath = T.unpack . fst . T.breakOnEnd "/" . T.pack
         return $ flip map sumstats $ \s -> (s, control', targets')
         |]
     nodePar "Regression" 'ldRegress $ nCore .= 8

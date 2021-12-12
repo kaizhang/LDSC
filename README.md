@@ -40,4 +40,19 @@ To run this pipeline, you need to prepare the following files:
 As an example, we will run the pipeline for GRCh38 genome and European acestry:
 
 1. Download all files listed here: http://renlab.sdsc.edu/kai/LDSC_hg38/
-2. `cd example && ldsc run --config config.dhall`
+2. Go to the example directory: `cd example`.
+3. Modify the `ldsc_program_path` in the configuration file `config.dhall`. 
+4. Run the pipeline: `ldsc run --config config.dhall`
+
+The states are stored in a file called `sciflow.db`, which is used to resume the program at the last checkpoint.
+The results are in the `output` directory.
+
+The running time depends on the number of annotations and GWAS summary statistics.
+You can use parallel computing to speed up the analysis.
+
+To use parallelism in one computer: `ldsc run --config config.dhall -n 10 +RTS -N10`.
+The number 10 here is the number of parallel jobs.
+
+To use the pipeline to in a grid computing system, adjust the relevant settings in `config.dhall`,
+and run it using: `ldsc run --config config.dhall -n 10 --cloud`.
+The default setting is configured for the TSCC environment at UCSD.
