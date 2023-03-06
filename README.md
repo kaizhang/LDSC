@@ -39,7 +39,7 @@ To run this pipeline, you need to prepare the following files:
 
 As an example, we will run the pipeline for GRCh38 genome and European acestry:
 
-1. Download all files listed here: http://renlab.sdsc.edu/kai/LDSC_hg38/
+1. Download all files listed here: https://osf.io/86upf/files/osfstorage.
 2. Go to the example directory: `cd example`.
 3. Modify the `ldsc_program_path` in the configuration file `config.dhall`. 
 4. Run the pipeline: `ldsc run --config config.dhall`
